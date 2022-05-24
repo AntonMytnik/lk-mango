@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
+    <title>lk</title>
+</head>
+
+<body>
+    <div class="change_user_container">
+        <div class="change_user_data">
+            <div class="flex user_container">
+                <fieldset class="username_email">
+                    <label>User name</label>
+                    <input type="text" placeholder="Username" id="username">
+                </fieldset>
+                <fieldset class="email">
+                    <label>eMail</label>
+                    <input type="email" placeholder="eMail" id="email">
+                </fieldset>
+            </div>
+            <fieldset class="user_image">
+                <label>Avatar</label>
+                <div class="bordered ">
+                    <img id="placeholder_img" src="/img/dot.svg" alt="Avatar" />
+                    <input type="file" class="form-control remove_file_space" id="user_avatar" onchange="loadFile(event)">
+                </div>
+            </fieldset>
+            <div class="flex user_container password_cont">
+                <fieldset>
+                    <label>Old password</label>
+                    <input type="text" placeholder="Old password" id="old_password">
+                </fieldset>
+                <fieldset>
+                    <label>New password</label>
+                    <input type="email" placeholder="New password" id="new_password">
+                </fieldset>
+                <fieldset>
+                    <label>Repeat password</label>
+                    <input type="email" placeholder="Repeat password" id="repeat_password">
+                </fieldset>
+            </div>
+            <input type="submit" id="change_user_data" value="Change data">
+        </div>
+    </div>
+    <script src="/js/main.js "></script>
+</body>
+
+</html>

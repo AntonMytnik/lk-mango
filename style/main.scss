@@ -1,0 +1,200 @@
+$color_main_red: #B2130F;
+$color_main_silver: #E1EDF5;
+$color_sec_silver: #b4bdc4;
+$color_main_black: #1E1E21;
+$color_main_brown: #222222;
+* {
+    padding: 0;
+    margin: 0;
+    background-color: $color_main_black;
+}
+
+.change_user_container {
+    background: $color_main_brown;
+    min-width: 320px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    * {
+        background: none;
+    }
+}
+
+.change_user_data {
+    margin: 0 auto;
+    // padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    color: $color_main_silver;
+    input[type="submit"] {
+        display: block;
+        margin: 30px auto 0 auto;
+        background-color: $color_main_silver;
+        background-image: linear-gradient(90deg, $color_main_silver 0%, $color_sec_silver 74%);
+        border-radius: 0.7rem;
+        border: 1px solid $color_main_silver;
+        color: $color_main_black;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        padding: 0.9rem 4rem;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+        &:active {
+            transform: scale(0.95);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .flex {
+        display: flex;
+        // justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .user_container {
+        fieldset:not(:first-child) {
+            margin-left: 2rem;
+        }
+    }
+    .bordered {
+        border: 1px solid $color_sec_silver;
+        border-radius: 0.25rem;
+    }
+    fieldset {
+        border: none;
+        background: none;
+        label {
+            display: block;
+            background: none;
+            margin: 0 0 8px 0;
+        }
+        input:not([type="file"]) {
+            display: block;
+            height: calc(2.25rem + 2px);
+            width: 160px;
+            padding: 0.10rem 0.5rem;
+            background: none;
+            border-radius: 0.25rem;
+            border: 1px solid $color_sec_silver;
+            font-size: 1rem;
+            background-clip: padding-box;
+            color: $color_main_silver;
+            &::placeholder {
+                color: $color_sec_silver;
+            }
+        }
+        &.user_image {
+            width: 100%;
+            margin: 15px auto 15px auto;
+            input[type="file"] {
+                display: block;
+                width: 210px;
+                margin: 10px;
+            }
+            img {
+                display: block;
+                margin: 10px 10px;
+                transition: 0.3s;
+                width: 95%;
+                height: 0px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .change_user_data {
+        .user_container {
+            fieldset:not(:first-child) {
+                margin-left: 0.5rem;
+            }
+        }
+        .password_cont {
+            justify-content: space-between;
+        }
+    }
+}
+
+@media only screen and (max-width: 590px) {
+    .change_user_data {
+        .password_cont {
+            fieldset {
+                margin-top: 0.5rem;
+                &:not(:first-child) {
+                    margin-left: 0rem;
+                }
+                &:first-child {
+                    width: 100%;
+                }
+                &:last-child {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+        .password_cont {
+            justify-content: start;
+        }
+    }
+}
+
+@media only screen and (max-width: 403px) {
+    .change_user_data {
+        .user_container {
+            fieldset {
+                margin-top: 0.5rem;
+                &:not(:first-child) {
+                    margin-left: 0rem;
+                }
+            }
+        }
+    }
+    .change_user_data {
+        .password_cont {
+            fieldset {
+                margin-left: 0rem;
+                &:first-child {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .change_user_data {
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            fieldset {
+                margin-left: 0rem;
+            }
+        }
+        .user_container {
+            fieldset {
+                margin-left: 0rem;
+            }
+        }
+        fieldset {
+            width: 100%;
+            margin: 0 auto;
+            input:not([type="file"]) {
+                width: calc(100% - 1.2rem);
+                margin: 0 auto;
+                padding: 0.10rem 0.5rem;
+                margin-left: 0;
+            }
+            &.user_image {
+                width: 100%;
+                img {
+                    display: block;
+                    margin: 10px 10px;
+                    transition: 0.3s;
+                    width: 95%;
+                    height: 0px;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
